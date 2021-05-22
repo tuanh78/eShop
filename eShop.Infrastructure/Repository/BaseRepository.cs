@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using eShop.Core.Entities;
 using eShop.Core.Interfaces.Repository;
 using Microsoft.Extensions.Configuration;
 using MySqlConnector;
@@ -78,6 +79,16 @@ namespace eShop.Infrastructure.Repository
             parameters.Add($"ID", TentityId);
             var rowAffects = dbConnection.Execute($"Proc_Delete{tableName}", parameters, commandType: CommandType.StoredProcedure);
             return rowAffects;
+        }
+
+        public IEnumerable<T> GetPaging(GetPagingRequest request)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@PageIndex", request.PageIndex);
+            parameters.Add("@PageSize", request.PageSize);
+            parameters.Add("@Q", request.Filter);
+            var result = dbConnection.Query<T>($"Proc_GetPaging{tableName}", parameters, commandType: CommandType.StoredProcedure);
+            return result;
         }
     }
 }

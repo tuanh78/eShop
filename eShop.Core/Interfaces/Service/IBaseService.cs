@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eShop.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -39,5 +40,7 @@ namespace eShop.Core.Interfaces
         /// <param name="Tentity"></param>
         /// <returns>Trả về số bản ghi đã xóa</returns>
         public int Delete(Guid TentityId);
+
+        public IEnumerable<T> GetPaging(GetPagingRequest request);
     }
 }

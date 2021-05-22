@@ -1,4 +1,5 @@
-﻿using eShop.Core.Interfaces;
+﻿using eShop.Core.Entities;
+using eShop.Core.Interfaces;
 using eShop.Core.Interfaces.Repository;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,11 @@ namespace eShop.Core.Service
         {
             var customer = _baseRepository.GetById(TentityId);
             return customer;
+        }
+
+        public IEnumerable<T> GetPaging(GetPagingRequest request)
+        {
+            return _baseRepository.GetPaging(request);
         }
 
         public int Insert(T Tentity)

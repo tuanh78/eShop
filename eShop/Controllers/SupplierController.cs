@@ -11,11 +11,11 @@ namespace eShop.Controllers
 {
     [Route("api/v1/[controller]s")]
     [ApiController]
-    public class SupplierController : ControllerBase
+    public class SupplierController : BaseController<Supplier>
     {
         private ISupplierService _supplierService;
 
-        public SupplierController(ISupplierService productService)
+        public SupplierController(ISupplierService productService) : base(productService)
         {
             _supplierService = productService;
         }
