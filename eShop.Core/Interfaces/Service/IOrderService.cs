@@ -5,7 +5,7 @@ using System.Text;
 
 namespace eShop.Core.Interfaces.Service
 {
-    public interface IOrderService : IBaseService<Order>
+    public interface IOrderService : IBaseService<Orders>
     {
     }
 }

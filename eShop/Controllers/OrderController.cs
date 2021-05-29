@@ -11,7 +11,7 @@ namespace eShop.Controllers
 {
     [Route("api/v1/[controller]s")]
     [ApiController]
-    public class OrderController : BaseController<Order>
+    public class OrderController : BaseController<Orders>
     {
         private IOrderService _orderService;
 
@@ -66,7 +66,7 @@ namespace eShop.Controllers
         /// <returns>201 - thêm thành công (trả về bản ghi vừa thêm)
         /// 204 - thêm thất bại</returns>
         [HttpPost]
-        public IActionResult Post(Order order)
+        public IActionResult Post(Orders order)
         {
             var res = _orderService.Insert(order);
             if (res > 0)
@@ -87,7 +87,7 @@ namespace eShop.Controllers
         /// <returns>200 - sửa thành công
         /// 204 - sửa thất bại</returns>
         [HttpPut("{id}")]
-        public IActionResult Put(Guid id, Order order)
+        public IActionResult Put(Guid id, Orders order)
         {
             var res = _orderService.Update(order);
             if (res > 0)

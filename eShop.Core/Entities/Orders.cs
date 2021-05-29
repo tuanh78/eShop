@@ -4,7 +4,7 @@ using System.Text;
 
 namespace eShop.Core.Entities
 {
-    public class Order
+    public class Orders
     {
         public Guid? Id { get; set; }
         public DateTime OrderDate { get; set; }

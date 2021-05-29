@@ -5,7 +5,7 @@ using System.Text;
 
 namespace eShop.Core.Interfaces.Repository
 {
-    public interface IOrderRepository : IBaseRepository<Order>
+    public interface IOrderRepository : IBaseRepository<Orders>
     {
     }
 }

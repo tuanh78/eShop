@@ -7,7 +7,7 @@ using System.Text;
 
 namespace eShop.Infrastructure.Repository
 {
-    public class OrderRepository:BaseRepository<Order>,IOrderRepository
+    public class OrderRepository:BaseRepository<Orders>,IOrderRepository
     {
         public OrderRepository(IConfiguration configuration):base(configuration)
         {

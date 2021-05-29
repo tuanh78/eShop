@@ -7,7 +7,7 @@ using System.Text;
 
 namespace eShop.Core.Service
 {
-    public class OrderService : BaseService<Order>, IOrderService
+    public class OrderService : BaseService<Orders>, IOrderService
     {
         private IOrderRepository _OrderRepository;
 
