@@ -42,5 +42,7 @@ namespace eShop.Core.Interfaces
         public int Delete(Guid TentityId);
 
         public IEnumerable<T> GetPaging(GetPagingRequest request);
+
+        public int GetTotalPaging(GetPagingRequest request);
     }
 }

@@ -39,6 +39,11 @@ namespace eShop.Core.Service
             return _baseRepository.GetPaging(request);
         }
 
+        public int GetTotalPaging(GetPagingRequest request)
+        {
+            return _baseRepository.GetTotalPaging(request);
+        }
+
         public int Insert(T Tentity)
         {
             var rowAffect = _baseRepository.Insert(Tentity);

@@ -90,5 +90,13 @@ namespace eShop.Infrastructure.Repository
             var result = dbConnection.Query<T>($"Proc_GetPaging{tableName}", parameters, commandType: CommandType.StoredProcedure);
             return result;
         }
+
+        public int GetTotalPaging(GetPagingRequest request)
+        {
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@Q", request.Filter);
+            var result = dbConnection.QueryFirstOrDefault<int>($"Proc_GetTotal{tableName}", parameters, commandType: CommandType.StoredProcedure);
+            return result;
+        }
     }
 }

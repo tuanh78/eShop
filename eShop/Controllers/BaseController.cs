@@ -34,5 +34,12 @@ namespace eShop.Controllers
                 return NoContent();
             }
         }
+
+        [HttpGet("total")]
+        public IActionResult GetTotalPaing([FromQuery] GetPagingRequest request)
+        {
+            var employees = _baseService.GetTotalPaging(request);
+            return Ok(employees);
+        }
     }
 }
